@@ -4,9 +4,9 @@
     "slug": "psm_iot",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/houseIcon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/homeSplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
