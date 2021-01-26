@@ -10,7 +10,6 @@ export class DevicesScreen extends React.Component {
     state = {
         devices: [],
         modalVisible: false,
-        dataLoaded: false
     }
 
     render() {
@@ -20,14 +19,12 @@ export class DevicesScreen extends React.Component {
                 <ScrollView>
                     <View style={styles.scrollCont}>
                         {this.state.devices.map((device, key) => {
-                            if (this.state.dataLoaded) {
-                                return (
-                                    <TouchableOpacity style={styles.device} key={key}
-                                                      onPress={() => console.log(device.command)}>
-                                        <Text style={{fontSize: 26, paddingBottom: 4}}> {device.name} </Text>
-                                        <Text style={{fontSize: 16}}> {device.place} </Text>
-                                    </TouchableOpacity>)
-                            }
+                            return (
+                                <TouchableOpacity style={styles.device} key={key}
+                                                  onPress={() => console.log(device.command)}>
+                                    <Text style={{fontSize: 26, paddingBottom: 4}}> {device.name} </Text>
+                                    <Text style={{fontSize: 16}}> {device.place} </Text>
+                                </TouchableOpacity>)
                         })}
                         <TouchableOpacity style={styles.device}
                                           onPress={() => this.setState({modalVisible: true})}>
@@ -60,7 +57,7 @@ export class DevicesScreen extends React.Component {
         getData('devices')
             .then(data => JSON.parse(data))
             .then(data => {
-                this.setState({devices: data, dataLoaded: true})
+                this.setState({devices: data})
             })
     }
 
@@ -72,7 +69,6 @@ export class DevicesScreen extends React.Component {
                     this.setState({
                         devices: [...this.state.devices, device],
                         modalVisible: false,
-                        dataLoaded: true
                     })
                 })
         } else {
@@ -80,8 +76,7 @@ export class DevicesScreen extends React.Component {
                 .then(() => {
                     this.setState({
                             devices: [device],
-                            modalVisible: false,
-                            dataLoaded: true
+                            modalVisible: false
                         }
                     )
                 })
