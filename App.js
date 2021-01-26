@@ -46,15 +46,15 @@ export default class App extends React.Component {
 
     }
 
-   async componentDidMount() {
+    async componentDidMount() {
         await this.loadFonts()
 
     }
 
     loadFonts = () => {
         Font.loadAsync({
-            Potta: require("./assets/fonts/PottaOne-Regular.ttf"),
-            Roboto: require("./assets/fonts/Roboto-Bold.ttf")
+            Inter: require("./assets/fonts/Inter-Regular.ttf"),
+            Potta: require("./assets/fonts/PottaOne-Regular.ttf")
         }).then(() => {
             this.setState({fontsLoaded: true})
         });
