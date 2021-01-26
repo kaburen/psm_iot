@@ -3,8 +3,8 @@ import {StyleSheet, Image, ActivityIndicator, Text, View} from 'react-native';
 import * as Font from "expo-font";
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {DevicesScreen} from "./Screens/DevicesScreen";
-import {ConnectionScreen} from "./Screens/ConnectionScreen";
+import {DevicesScreen} from "./screens/DevicesScreen";
+import {ConnectionScreen} from "./screens/ConnectionScreen";
 // import {Inter_400Regular} from "@expo-google-fonts/inter";
 
 
