@@ -23,7 +23,7 @@ export default class App extends React.Component {
     render() {
 
         if (!this.state.fontsLoaded) {
-            return <View><Text>huj</Text></View>
+            return <ActivityIndicator/>
         } else {
             return (
                 <NavigationContainer>

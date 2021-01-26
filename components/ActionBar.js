@@ -5,9 +5,9 @@ import {StyleSheet, Text, View} from "react-native";
 export default class ActionBar extends React.Component {
 
     render() {
-        const {font, title} = this.props
+        const {font, title, marTop} = this.props
         return (
-            <View style={styles.headerContainer}>
+            <View style={[styles.headerContainer,{marginTop: marTop}]}>
                 <Text style={[styles.headerText, {fontSize: font}]}>{title}</Text>
             </View>
         )
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     },
     headerText: {
         color: '#ebebeb',
-        // fontFamily: 'Inter'
+        fontFamily: 'Inter'
     },
 })
