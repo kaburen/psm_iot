@@ -62,7 +62,6 @@ export class DevicesScreen extends React.Component {
     }
 
     saveDevice = (device) => {
-        console.log(device)
         if (this.state.devices !== null) {
             storeData('devices', JSON.stringify([...this.state.devices, device]))
                 .then(() => {

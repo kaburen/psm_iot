@@ -1,19 +1,14 @@
 import React from 'react';
-import {StyleSheet, Image, ActivityIndicator, Text, View} from 'react-native';
+import {StyleSheet, Image, ActivityIndicator} from 'react-native';
 import * as Font from "expo-font";
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {DevicesScreen} from "./screens/DevicesScreen";
 import {ConnectionScreen} from "./screens/ConnectionScreen";
-// import {Inter_400Regular} from "@expo-google-fonts/inter";
 
 
 
 const Tab = createBottomTabNavigator();
-
-// let customFonts = {
-//     Inter_400Regular
-// }
 
 export default class App extends React.Component {
     state = {
@@ -53,8 +48,7 @@ export default class App extends React.Component {
 
     loadFonts = () => {
         Font.loadAsync({
-            Inter: require("./assets/fonts/Inter-Regular.ttf"),
-            Potta: require("./assets/fonts/PottaOne-Regular.ttf")
+            Inter: require("./assets/fonts/Inter-Regular.ttf")
         }).then(() => {
             this.setState({fontsLoaded: true})
         });
